@@ -310,8 +310,9 @@ const calcular = operaciones(operacion);
 const info = productos.map((item) =>{
   return {
     nombre: item.nombre,
-    precio: (`Precio antiguo ${item.precio} `),
-    precio: (`nuevo precio ${calcular(item.precio,numeroProducto)}`)
+    
+    precio:(`Antiguo: ${item.precio} Nuevo precio ${calcular(item.precio,numeroProducto)}`),
+    
   }
 });
 console.log(info);
