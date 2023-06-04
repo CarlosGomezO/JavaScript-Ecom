@@ -222,19 +222,6 @@ alert(mensaje);
 
 
 
-function ProductoML(id,nombre, precio, imagen, stock){
-  this.nombre = nombre;
-  this.precio = precio;
-  this.imagen = imagen;
-  this.stock = stock 
-};
-
-const productos = [
-  producto1 = new ProductoML (012,"tabla", 800, "https.mckmosvnjd", 10),
-  producto2 = new ProductoML (022,"tabla 1", 900, "https.mckmosvnjd", 10),
-  producto3 = new ProductoML (032,"tabla 2", 1000, "https.mckmosvnjd", 10),
-  producto4 = new ProductoML (042,"tabla 3", 2000, "https.mckmosvnjd", 10),
-]
 
 /*
 
@@ -289,12 +276,30 @@ busqueda.forEach((item) => {
 
 // CALCULAR OPERACIONES DE SUMA, RESTA MULTIPLICACION Y DIVISIÓN sobre los precios del arreglo 
 
+/*
+
+function ProductoML(id, nombre, precio, imagen, stock) {
+  this.nombre = nombre;
+  this.precio = precio;
+  this.imagen = imagen;
+  this.stock = stock
+};
+
+const productos = [
+  producto1 = new ProductoML(012, "tabla", 800, "https.mckmosvnjd", 10),
+  producto2 = new ProductoML(022, "tabla 1", 900, "https.mckmosvnjd", 10),
+  producto3 = new ProductoML(032, "tabla 2", 1000, "https.mckmosvnjd", 10),
+  producto4 = new ProductoML(042, "tabla 3", 2000, "https.mckmosvnjd", 10),
+]
+
+
+
 const operaciones = (op) => {
   if (op === "+") {
     return (a, b) => a + b;
   } else if (op === "-") {
     return (a, b) => a - b;
- } else if (op === "*") {
+  } else if (op === "*") {
     return (a, b) => a * b;
   } else if (op === "/") {
     return (a, b) => a / b;
@@ -307,19 +312,92 @@ let operacion = "+";
 let numeroProducto = 50;
 const calcular = operaciones(operacion);
 
-const info = productos.map((item) =>{
+const info = productos.map((item) => {
   return {
     nombre: item.nombre,
-    
-    precio:(`Antiguo: ${item.precio} Nuevo precio ${calcular(item.precio,numeroProducto)}`),
-    
+
+    precio: (`Antiguo: ${item.precio} Nuevo precio ${calcular(item.precio, numeroProducto)}`),
+
   }
 });
 console.log(info);
 
+
 console.log(`lista de productos alterada por consola = ${info}`); // NOTA: POR "ALERT" ARROJA = [object Object],[object Object],[object Object],[object Object]
 
 
-
+*/
 
 //*************************************** HASTA ACA ES LA 2DA ENTREGA ***********************************************************************
+
+
+
+// **************************************** 3RA ENTREGA *********************************************************************************
+
+
+
+
+let formulario = document.getElementById("formulario");
+let agregados = document.getElementById("agregados");
+
+// Creamos objetos para el localStorage
+let clientes =[
+  {id: 1, nombre: "Micaela", email: "mica@gmail.com"},
+  {id: 2, nombre: "Carlos", email: "carlos@gmail.com"},
+  
+];
+localStorage.setItem("clientes",JSON.stringify(clientes)); // Agregar al local storage
+
+
+//LOGICA PARA GUARDAR EN LOCAL STORAGE 
+
+const crear = (nombre, email) => {
+  let clientesStorage = localStorage.getItem("clientes");
+  let clientes = JSON.parse(clientesStorage);
+
+  let nuevoCliente = {
+    id: clientes.length + 1,
+    nombre: nombre,
+    email: email,
+  };
+
+  clientes.push(nuevoCliente);
+  localStorage.setItem("clientes", JSON.stringify(clientes));
+};
+
+
+// LLAMAMOS AL FORMULARIO
+
+
+// EVENTO PARA AGREGAR AL LOCAL STORAGE CON INPUT VALUES
+formulario.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  let nombre = e.target.elements.nombre.value;
+  let email = e.target.elements.email.value;
+
+  crear(nombre, email);
+});
+
+
+// EVENTO PARA MOSTRAR STORAGE CON HTML 
+agregados.addEventListener("click", () => {
+
+  let clientesStorage = localStorage.getItem("clientes");
+  let clientes = JSON.parse(clientesStorage);
+
+  clientes.forEach((clientes) =>{
+    let div = document.createElement("div");
+    div.innerHTML = `
+      <h2> ID: ${clientes.id}<h2>
+      <p> Nombre: ${clientes.nombre}<p>
+      <b> ${clientes.email}<b>
+      <hr/>
+      `;
+    document.body.append(div);
+  });
+
+
+});
+
+//*************************************** HASTA ACA ES LA 3RADA ENTREGA ***********************************************************************
