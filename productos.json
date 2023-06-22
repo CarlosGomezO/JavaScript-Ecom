@@ -1,0 +1,48 @@
+[
+    {
+      "nombre": "Quicksilver - Longboard 6'0",
+      "precio": 10.99,
+      "imagen": "https://firebasestorage.googleapis.com/v0/b/imagenes-7f96e.appspot.com/o/Disen%CC%83o%20sin%20ti%CC%81tulo.png?alt=media&token=72aa6bcb-d471-4929-84bc-dc23f720f714"
+    
+    },
+    {
+      "nombre": "Quicksilver - Longboard 6'0",
+      "precio": 19.99,
+      "imagen": "https://firebasestorage.googleapis.com/v0/b/imagenes-7f96e.appspot.com/o/tabla-10.jpeg?alt=media&token=aaf0e517-72bb-4ffa-acbc-265e39ef655a"
+    },
+    {
+      "nombre": "Quicksilver - Longboard 6'0",
+      "precio": 5.99,
+      "imagen": "https://firebasestorage.googleapis.com/v0/b/imagenes-7f96e.appspot.com/o/tabla-11.jpg?alt=media&token=e37a760e-9b4f-4a10-89ec-c14adbf2bb09"
+    },
+    {
+        "nombre": "Quicksilver - Longboard 6'0",
+        "precio": 10.99,
+        "imagen": "https://firebasestorage.googleapis.com/v0/b/imagenes-7f96e.appspot.com/o/tabla-12.jpg?alt=media&token=b8b6e533-b58b-4cc7-85a3-ff8fbdf664c5"
+      },
+      {
+        "nombre": "Quicksilver - Longboard 6'0",
+        "precio": 19.99,
+        "imagen": "https://firebasestorage.googleapis.com/v0/b/imagenes-7f96e.appspot.com/o/tabla-13.jpg?alt=media&token=fe3e8362-6d1b-4d70-88d7-2a2a0a4feef7"
+      },
+      {
+        "nombre": "Quicksilver - Longboard 6'0",
+        "precio": 5.99,
+        "imagen": "https://firebasestorage.googleapis.com/v0/b/imagenes-7f96e.appspot.com/o/tabla-5.jpg?alt=media&token=88590129-22c3-4abe-80a4-c720a9a02780"
+      },
+      {
+        "nombre": "Quicksilver - Longboard 6'0",
+        "precio": 10.99,
+        "imagen": "https://firebasestorage.googleapis.com/v0/b/imagenes-7f96e.appspot.com/o/tabla-12.jpg?alt=media&token=b8b6e533-b58b-4cc7-85a3-ff8fbdf664c5"
+      },
+      {
+        "nombre": "Quicksilver - Longboard 6'0",
+        "precio": 19.99,
+        "imagen": "https://firebasestorage.googleapis.com/v0/b/imagenes-7f96e.appspot.com/o/tabla-13.jpg?alt=media&token=fe3e8362-6d1b-4d70-88d7-2a2a0a4feef7"
+      },
+      {
+        "nombre": "Quicksilver - Longboard 6'0",
+        "precio": 5.99,
+        "imagen": "https://firebasestorage.googleapis.com/v0/b/imagenes-7f96e.appspot.com/o/tabla-9.jpg?alt=media&token=b40e9ee8-2ff4-4c11-82ca-e3d97a4b0ee0"
+      }
+  ]

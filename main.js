@@ -401,3 +401,144 @@ agregados.addEventListener("click", () => {
 });
 
 //*************************************** HASTA ACA ES LA 3RADA ENTREGA ***********************************************************************
+
+/* PROMESAS*/
+/*
+const DB = [
+  { id: 1, nombre: "camisa", precio: 1000 },
+  { id: 2, nombre: "zapato", precio: 1000 },
+  { id: 3, nombre: "media", precio: 1000 },
+  { id: 4, nombre: "gorra", precio: 1000 },
+];
+
+const traerProductos = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(DB);
+      // reject("error intente luego");
+    }, 3000);
+  });
+};
+////////////////////////////////////////////////////////
+
+traerProductos()
+  .then((response) => {
+    response.forEach((producto) => {
+      let div = document.createElement("div");
+      div.innerHTML = `
+        <h2>Id: ${producto.id}</h2>
+        <p>Nombre: ${producto.nombre}</p>
+        <b>precio: ${producto.precio}</b>
+        <hr />
+      `;
+
+      document.body.append(div);
+    });
+  })
+  .catch((error) => console.log(error));
+  */
+// ************************************************************ ENTREGA DE PROYECTO FINAL *****************************************************************************************************
+
+// Mostrar cards con un .JSON y se aplica librería SweetAlert
+  document.addEventListener('DOMContentLoaded', () => {
+    const productContainer = document.getElementById('lista-productos');
+    // Cargar el archivo JSON
+    fetch('productos.json')
+      .then(response => response.json())
+      .then(data => {
+        // Se generar el HTML para cada producto
+        data.forEach((product, index) => {
+          const productHTML = `
+            <div class="card" style="width: 18rem;">
+              <img src="${product.imagen}" class="card-img-top">
+              <div class="card-body">
+                <h5>${product.nombre}</h5>
+                <p>Precio: ${product.precio}</p>
+                <button class="btn btn-dark" onclick="mostrarAlerta(${index})">Comprar</button>
+              </div>  
+            </div>
+          `;
+    
+          // Agrega al HTML
+          productContainer.innerHTML += productHTML;
+        });
+      })
+      .catch(error => {
+        console.log('Error al cargar el archivo JSON:', error);
+      });
+  });
+  function mostrarAlerta(index) {
+    Swal.fire('Coming Soon, pronto podrás comprar');
+  }
+
+
+// Productos API con promesa
+const ApiContainer = document.getElementById('Api-container');
+
+const MLproducts = () => {
+  return new Promise((resolve, reject) => {
+    fetch("https://rickandmortyapi.com/api/character")
+      .then(response => response.json())
+      .then(data => {
+        const products = data.results;
+        products.forEach(product => {
+          let div = document.createElement("div");
+          div.className = "card-box";
+          div.innerHTML = `
+            <div class="card" style="width: 18rem; height: 23rem;">
+              <div">
+                <img src=${product.image} style="width: 18rem;">
+                <b>Nombre: ${product.name}</b>
+                <p>Status: ${product.status}</p>
+              </div>
+            </div>
+          `;
+          ApiContainer.appendChild(div);
+        });
+        resolve(products);
+      })
+      .catch(error => reject(error));
+  });
+};
+
+// Ejemplo de uso de la promesa en tu Ecommerce
+MLproducts()
+  .then(products => {
+    // Realizar acciones con los productos obtenidos
+    console.log(products);
+  })
+  .catch(error => {
+    // Manejar el error de la promesa
+    console.log('Error:', error);
+  });
+
+
+// ************************************************************ FINALIZA ENTREGA DE PROYECTO FINAL *****************************************************************************************************
+
+/*
+
+// Productos Api
+const ApiContainer = document.getElementById('Api-container');
+const MLproducts = async () => {
+  const response = await fetch("https://rickandmortyapi.com/api/character");
+  const data = await response.json();
+  const products = data.results;
+
+  products.forEach((product)=>{
+    let div = document.createElement("div");
+    div.className = "card-box";
+    div.innerHTML = `
+      <div class="card" style="width: 18rem; height: 23rem;">
+        <div">
+          <image src = ${product.image} style = "width: 18rem;">
+          <b>Nombre: ${product.name}</b>
+          <p>Status: ${product.status}</p>
+        </div>
+      </div>
+    `;
+    ApiContainer.appendChild(div);
+  });
+};
+MLproducts();
+
+*/
